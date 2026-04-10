@@ -1,103 +1,45 @@
 # ─────────────────────────────────────────────
 # AWS
 # ─────────────────────────────────────────────
-variable "aws_region" {
-  type    = string
-  default = "us-east-2"
-}
-
-variable "aws_account_id" {
-  type = string
-}
+aws_region     = "us-east-2"
+aws_account_id = "219366469144"
 
 # ─────────────────────────────────────────────
 # Databricks
 # ─────────────────────────────────────────────
-variable "databricks_host" {
-  type = string
-}
+databricks_host         = "https://dbc-eba3b5c1-b94d.cloud.databricks.com"
+databricks_workspace_id = "7474660166312859" 
+databricks_account_id   = "f5625652-0e9f-4b02-bee8-4210c80918d4" 
 
-variable "databricks_token" {
-  type      = string
-  sensitive = true
-}
-
-variable "databricks_client_id" {
-  type      = string
-  sensitive = true
-}
-
-variable "databricks_client_secret" {
-  type      = string
-  sensitive = true
-}
-
-variable "databricks_account_id" {
-  type = string
-}
-
-variable "databricks_workspace_id" {
-  type = string
-}
+# Sensitive — set via Terraform Cloud variables:
+# databricks_token
+# databricks_client_id
+# databricks_client_secret
 
 # ─────────────────────────────────────────────
 # Project
 # ─────────────────────────────────────────────
-variable "env" {
-  type    = string
-  default = "dev"
-}
-
-variable "team" {
-  type    = string
-  default = "kv"
-}
-
-variable "project" {
-  type    = string
-  default = "fhir-poc"
-}
-
-variable "catalog_name" {
-  type = string
-}
-
-variable "sp_roles_list" {
-  type    = list(string)
-  default = []
-}
+env          = "dev"
+team         = "kv"
+project      = "fhir-poc"
+catalog_name = "KVDev"
+sp_roles_list = [sp-kv-etl-app-dev]
 
 # ─────────────────────────────────────────────
 # S3 Buckets
 # ─────────────────────────────────────────────
-variable "catalog_bucket" {
-  type = string
-}
-
-variable "ingestion_bucket" {
-  type = string
-}
-
-variable "databricks_bucket" {
-  type = string
-}
+catalog_bucket    = "kv-dev-219366469144-catalog"
+ingestion_bucket  = "kv-dev-219366469144-ingestion"
+databricks_bucket = "kv-dev-219366469144-databricks"
 
 # ─────────────────────────────────────────────
 # IAM
 # ─────────────────────────────────────────────
-variable "catalog_role_arn" {
-  type = string
-}
+catalog_role_arn     = "arn:aws:iam::219366469144:role/kv-dev-catalog-role"
+instance_profile_arn = "arn:aws:iam::219366469144:instance-profile/kv-dev-instance-profile"
 
 # ─────────────────────────────────────────────
 # KMS
 # ─────────────────────────────────────────────
-variable "storage_customer_managed_key_arn" {
-  type    = string
-  default = ""
-}
-
-variable "storage_customer_managed_key_alias" {
-  type    = string
-  default = ""
-}
+storage_customer_managed_key_arn   = "arn:aws:kms:us-east-2:219366469144:key/52fb1ead-518b-44a0-8352-c4992ed31f5c"
+storage_customer_managed_key_alias = "kms-key/databricks/dev/us-east-2/kv"
