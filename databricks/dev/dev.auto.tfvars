@@ -23,7 +23,7 @@ env          = "dev"
 team         = "kv"
 project      = "fhir-poc"
 catalog_name = "KVDev"
-sp_roles_list = [sp-kv-etl-app-dev]
+sp_roles_list = ["sp-kv-etl-app-dev"]
 
 # ─────────────────────────────────────────────
 # S3 Buckets
@@ -36,7 +36,7 @@ databricks_bucket = "kv-dev-219366469144-databricks"
 # IAM
 # ─────────────────────────────────────────────
 catalog_role_arn     = "arn:aws:iam::219366469144:role/kv-dev-catalog-role"
-instance_profile_arn = "arn:aws:iam::219366469144:instance-profile/kv-dev-instance-profile"
+# instance_profile_arn = "arn:aws:iam::219366469144:instance-profile/kv-dev-instance-profile"
 
 # ─────────────────────────────────────────────
 # KMS
