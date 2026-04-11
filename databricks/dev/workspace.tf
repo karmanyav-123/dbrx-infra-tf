@@ -8,7 +8,7 @@ module "workspace" {
   source = "./modules/workspace"
 
   providers = {
-    databricks = databricks.dbworkspace
+    databricks.dbworkspace = databricks.dbworkspace
   }
 
   env                     = var.env
@@ -26,7 +26,7 @@ module "cmk_storage" {
   source = "./modules/cmk_storage"
 
   providers = {
-    databricks = databricks.mws
+    databricks.mws = databricks.mws
   }
 
   env                                = var.env
