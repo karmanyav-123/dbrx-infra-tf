@@ -28,7 +28,7 @@ resource "databricks_grants" "storage_credential_grant" {
 resource "databricks_external_location" "catalog_external_location" {
   provider        = databricks.dbworkspace
   name            = "${var.team}-${var.env}-catalog"
-  url             = "s3://${var.catalog_bucket}"
+  url             = "${var.catalog_bucket}"
   credential_name = databricks_storage_credential.storage_credential.id
   comment         = "Catalog data bucket"
 }
@@ -82,7 +82,7 @@ resource "databricks_grants" "catalog_grant" {
 resource "databricks_external_location" "ingestion_external_location" {
   provider        = databricks.dbworkspace
   name            = "${var.team}-${var.env}-ingestion"
-  url             = "s3://${var.ingestion_bucket}"
+  url             = "${var.ingestion_bucket}"
   credential_name = databricks_storage_credential.storage_credential.id
   comment         = "Raw ingestion data bucket"
 
@@ -102,7 +102,7 @@ resource "databricks_grants" "ingestion_grants" {
 resource "databricks_external_location" "root_bucket" {
   provider        = databricks.dbworkspace
   name            = "${var.team}-${var.env}-root"
-  url             = "s3://${var.databricks_bucket}"
+  url             = "${var.databricks_bucket}"
   credential_name = databricks_storage_credential.storage_credential.id
   comment         = "Databricks workspace storage bucket"
 
