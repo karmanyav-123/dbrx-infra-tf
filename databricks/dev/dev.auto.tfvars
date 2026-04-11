@@ -23,7 +23,7 @@ env          = "dev"
 team         = "kv"
 project      = "fhir-poc"
 catalog_name = "kvdev"
-sp_roles_list = ["sp-kv-etl-app-dev"]
+sp_roles_list = []
 
 # ─────────────────────────────────────────────
 # S3 Buckets
