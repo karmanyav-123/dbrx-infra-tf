@@ -28,9 +28,9 @@ sp_roles_list = ["sp-kv-etl-app-dev"]
 # ─────────────────────────────────────────────
 # S3 Buckets
 # ─────────────────────────────────────────────
-catalog_bucket    = "s3://kv-dev-219366469144-catalog/"
-ingestion_bucket  = "s3://kv-dev-219366469144-ingestion/"
-databricks_bucket = "s3://kv-dev-219366469144-databricks/"
+catalog_bucket    = "s3://kv-dev-219366469144-catalog"
+ingestion_bucket  = "s3://kv-dev-219366469144-ingestion"
+databricks_bucket = "s3://kv-dev-219366469144-databricks"
 
 # ─────────────────────────────────────────────
 # IAM
