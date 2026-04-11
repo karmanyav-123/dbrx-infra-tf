@@ -22,7 +22,7 @@ databricks_account_id   = "f5625652-0e9f-4b02-bee8-4210c80918d4"
 env          = "dev"
 team         = "kv"
 project      = "fhir-poc"
-catalog_name = "KVDev"
+catalog_name = "kvdev"
 sp_roles_list = ["sp-kv-etl-app-dev"]
 
 # ─────────────────────────────────────────────
