@@ -118,3 +118,43 @@ resource "databricks_grants" "root_bucket_grants" {
     privileges = ["ALL PRIVILEGES"]
   }
 }
+
+resource "databricks_external_location" "dcv_bucket" {
+  provider        = databricks.dbworkspace
+  name            = "${var.team}-${var.env}-dcv"
+  url             = "${var.dcv_bucket}"
+  credential_name = databricks_storage_credential.storage_credential.id
+  comment         = "DCV bucket"
+
+  depends_on = [databricks_storage_credential.storage_credential]
+}
+
+resource "databricks_grants" "dcv_bucket_grants" {
+  provider          = databricks.dbworkspace
+  external_location = databricks_external_location.dcv_bucket.name
+
+  grant {
+    principal  = "account users"
+    privileges = ["ALL PRIVILEGES"]
+  }
+}
+
+resource "databricks_external_location" "atomic_bucket" {
+  provider        = databricks.dbworkspace
+  name            = "${var.team}-${var.env}-atomic"
+  url             = "${var.atomic_bucket}"
+  credential_name = databricks_storage_credential.storage_credential.id
+  comment         = "Databricks workspace storage bucket"
+
+  depends_on = [databricks_storage_credential.storage_credential]
+}
+
+resource "databricks_grants" "atomic_bucket_grants" {
+  provider          = databricks.dbworkspace
+  external_location = databricks_external_location.atomic_bucket.name
+
+  grant {
+    principal  = "account users"
+    privileges = ["ALL PRIVILEGES"]
+  }
+}
