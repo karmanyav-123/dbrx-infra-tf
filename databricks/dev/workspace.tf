@@ -19,6 +19,8 @@ module "workspace" {
   catalog_bucket          = var.catalog_bucket
   ingestion_bucket        = var.ingestion_bucket
   databricks_bucket       = var.databricks_bucket
+  dcv_bucket              = var.dcv_bucket
+  atomic_bucket           = var.atomic_bucket
   catalog_role_arn        = var.catalog_role_arn
 }
 

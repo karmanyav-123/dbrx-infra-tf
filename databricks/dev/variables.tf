@@ -1,6 +1,3 @@
-# ─────────────────────────────────────────────
-# AWS
-# ─────────────────────────────────────────────
 variable "aws_region" {
   type    = string
   default = "us-east-2"
@@ -10,9 +7,6 @@ variable "aws_account_id" {
   type = string
 }
 
-# ─────────────────────────────────────────────
-# Databricks
-# ─────────────────────────────────────────────
 variable "databricks_host" {
   type = string
 }
@@ -40,9 +34,6 @@ variable "databricks_workspace_id" {
   type = string
 }
 
-# ─────────────────────────────────────────────
-# Project
-# ─────────────────────────────────────────────
 variable "env" {
   type    = string
   default = "dev"
@@ -67,9 +58,6 @@ variable "sp_roles_list" {
   default = []
 }
 
-# ─────────────────────────────────────────────
-# S3 Buckets
-# ─────────────────────────────────────────────
 variable "catalog_bucket" {
   type = string
 }
@@ -82,16 +70,10 @@ variable "databricks_bucket" {
   type = string
 }
 
-# ─────────────────────────────────────────────
-# IAM
-# ─────────────────────────────────────────────
 variable "catalog_role_arn" {
   type = string
 }
 
-# ─────────────────────────────────────────────
-# KMS
-# ─────────────────────────────────────────────
 variable "storage_customer_managed_key_arn" {
   type    = string
   default = ""
@@ -100,4 +82,12 @@ variable "storage_customer_managed_key_arn" {
 variable "storage_customer_managed_key_alias" {
   type    = string
   default = ""
+}
+
+variable "dcv_bucket" {
+  type = string
+}
+
+variable "atomic_bucket" {
+  type = string
 }
